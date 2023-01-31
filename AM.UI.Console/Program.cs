@@ -37,3 +37,4 @@ Staff staff1 = new Staff
 };
 Console.WriteLine("Staff1: ");
 staff1.PassengerType();
+//satgtgtgtg
