@@ -18,7 +18,7 @@ namespace AM.ApplicationCore.Domain
         public ICollection<Passenger> Passengers { get; set; }
         public override string ToString()
         {
-            return "Departure =" +this.Departure+ "Destination ="+this.Destination+ "EffectiveArrival="+this.EffectiveArrival;
+            return  "Destination ="+this.Destination+ " EffectiveArrival="+this.EffectiveArrival+ " EstimatedDuration="+this.EstimatedDuration;
         }
     }
 }
