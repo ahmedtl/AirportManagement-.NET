@@ -15,12 +15,12 @@ using AM.ApplicationCore.Services;
 //    ManufactureDate = new DateTime(2016, 04, 03)
 //};
 //Console.WriteLine(plane3.ToString());
-//Passenger passenger1 = new Passenger
-//{
-//    FirstName = "Ahmed",
-//    LastName = "Tlili",
-//    EmailAdress = "ahmed.tlili@esprit.tn"
-//};
+Passenger passenger1 = new Passenger
+{
+    FirstName = "ahmed",
+    LastName = "tlili",
+    EmailAdress = "ahmed.tlili@esprit.tn"
+};
 //Console.WriteLine(passenger1.CheckProfile("Ahmed", "tnyjyt", "ahmed.tlili@esprit.tn"));
 //Traveller traveller1 = new Traveller
 //{
@@ -48,3 +48,19 @@ foreach (var item in sf.GetFlightDates("Paris"))
     Console.WriteLine(item);
 }
 sf.GetFlights("Destination", "Paris");
+sf.FlightDetailsDel(TestData.BoingPlane);
+Console.WriteLine("Total flights :" + sf.ProgrammedFlightNumber(new DateTime(2022, 02, 01)));
+Console.WriteLine("Average estimated time :" + sf.DurationAverageDel("Madrid"));
+foreach(var item in sf.OrderedDurationFlights())
+{
+    Console.WriteLine(item);
+}
+foreach (var item in sf.SeniorTravellers(TestData.flight1))
+{
+    Console.WriteLine(item);
+}
+sf.DestinationGroupedFlights();
+Console.WriteLine(passenger1.FirstName + passenger1.LastName);
+passenger1.UpperFullName();
+Console.WriteLine(passenger1.FirstName + passenger1.LastName);
+
