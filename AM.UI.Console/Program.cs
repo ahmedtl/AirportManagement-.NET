@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using AM.ApplicationCore.Domain;
 using AM.ApplicationCore.Services;
+using AM.Infrastructure;
 
 //Plane plane= new Plane();
 //plane.Capacity = 200;
@@ -43,6 +44,9 @@ Passenger passenger1 = new Passenger
 
 ServiceFlight sf = new ServiceFlight();
 sf.flights = TestData.listFlights;
+//AMContext ctx = new AMContext();
+//ctx.Flights.Add(TestData.flight1);
+//ctx.SaveChanges();
 foreach (var item in sf.GetFlightDates("Paris"))
 {
     Console.WriteLine(item);
