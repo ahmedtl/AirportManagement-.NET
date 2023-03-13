@@ -1,4 +1,5 @@
 ﻿using AM.ApplicationCore.Domain;
+using AM.Infrastructure.Configurations;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,19 @@ namespace AM.Infrastructure
             base.OnConfiguring(optionsBuilder);
             
         }
-        
-        
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new PlaneConfiguration());
+            modelBuilder.ApplyConfiguration(new FlightConfiguration());
+            modelBuilder.ApplyConfiguration(new PassengerConfiguration());
+        }
+
+        protected override void ConfigureConventions(ModelConfigurationBuilder modelConfigurationBuilder)
+        {
+            modelConfigurationBuilder.Properties<DateTime>().HaveColumnType("date");
+        }
+
+
     }
 }
